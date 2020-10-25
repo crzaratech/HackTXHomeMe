@@ -1,9 +1,6 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'selectionScreen.dart';
-
-
 
 class MainScreen extends StatefulWidget {
   @override
@@ -13,16 +10,27 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   final _formKey = GlobalKey<FormState>();
 
-  String zip ='';
+  String zip = '';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.cyan[600],
       appBar: AppBar(
-
         backgroundColor: Colors.lightGreen,
-        title: Text('HomeMe'),
+        toolbarHeight: 100.0,
+        title: Center(
+          child: Text(
+            'HomeMe',
+            style: TextStyle(
+              color: Colors.black,
+              fontFamily: 'Source Sans Pro',
+              fontSize: 40.0,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 2.5,
+            ),
+          ),
+        ),
       ),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
@@ -32,26 +40,38 @@ class _MainScreenState extends State<MainScreen> {
             children: <Widget>[
               SizedBox(height: 20.0),
               TextFormField(
-                decoration: InputDecoration(hintText: 'zipcode'),
+                decoration: InputDecoration(
+                  prefixIcon: new Icon(Icons.search),
+                  hintText: 'zipcode',
+                ),
                 validator: (val) => val.isEmpty ? 'Enter zipcode' : null,
-                onChanged: (val){
+                onChanged: (val) {
                   setState(() => zip = val);
                 },
               ),
-              SizedBox(height: 20.0),
-              RaisedButton(
-                  onPressed: (){
-                    Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => SecondScreen()),
-                    );
-                  }
+              SizedBox(height: 25.0),
+              SizedBox(
+                height: 50.0,
+                child: RaisedButton(
+                    child: Text('Press here after typing zipcode above'),
+                    color: Colors.lightGreen,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SecondScreen()),
+                      );
+                    }),
+              ),
+              SizedBox(height: 50.0),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Image.asset('images/homeMe.png',
+                    height: 300.0, width: 400.0),
               ),
             ],
           ),
         ),
-
       ),
     );
   }
 }
-
