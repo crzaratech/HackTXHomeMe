@@ -1,6 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterhomemev1/listofPlaces.dart';
 import 'selectionScreen.dart';
 
 
@@ -20,7 +21,7 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       backgroundColor: Colors.cyan[600],
       appBar: AppBar(
-
+        centerTitle: true,
         backgroundColor: Colors.lightGreen,
         title: Text('HomeMe'),
       ),
@@ -32,19 +33,33 @@ class _MainScreenState extends State<MainScreen> {
             children: <Widget>[
               SizedBox(height: 20.0),
               TextFormField(
-                decoration: InputDecoration(hintText: 'zipcode'),
+                decoration: InputDecoration(
+                    prefixIcon: new Icon(Icons.search),
+                    hintText: 'zipcode'),
                 validator: (val) => val.isEmpty ? 'Enter zipcode' : null,
                 onChanged: (val){
                   setState(() => zip = val);
                 },
               ),
-              SizedBox(height: 20.0),
-              RaisedButton(
-                  onPressed: (){
-                    Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => SecondScreen()),
-                    );
-                  }
+
+              SizedBox(height: 25.0),
+              SizedBox(
+                height: 50.0,
+                child: RaisedButton(
+                    child: Text('Press here after typing zipcode above'),
+                    color: Colors.lightGreen,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SecondScreen()),
+                      );
+                    }),
+              ),
+              SizedBox(height: 50.0),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Image.asset('images/homeMe.png',
+                    height: 300.0, width: 400.0),
               ),
             ],
           ),

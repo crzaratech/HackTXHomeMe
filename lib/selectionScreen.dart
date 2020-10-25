@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterhomemev1/listofPlaces.dart';
 
 class SecondScreen extends StatelessWidget {
   @override
@@ -30,7 +31,11 @@ class SelectionScreen extends StatelessWidget {
 
             children: [
               FlatButton(
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => PlacesScreen()),
+                  );
+                },
                 child: Image.asset('images/icons8-prefab-house-100.png'),
               ),
               FlatButton(
