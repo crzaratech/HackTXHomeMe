@@ -1,16 +1,13 @@
-# flutterhomemev1
+# HomeMe
 
-A new Flutter application.
+My team and I made this app for the HackTX 2020 Hackathon. We were interested in solving Wayfairs challenge "Create a solution to support low income or displaced families on finding and securing housing or other vital resources! Any project in this space is eligible." 
 
-## Getting Started
+## Technologies Used
+-Flutter
+-Google Maps API
 
-This project is a starting point for a Flutter application.
+## What we did
 
-A few resources to get you started if this is your first Flutter project:
+Our Idea was to use Google's Map API to get the nearest places related to housing, food banks and health care. It was our first time using the google API and we only had about 19 hours to implement our idea, but given the time restraints we got pretty far and we were able to return and display a list of nearby locations with the keyword "housing". 
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
